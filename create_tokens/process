@@ -1,0 +1,52 @@
+#!/usr/bin/env python3
+
+
+from spacy.lang.en import English
+from timer import *
+
+# Creating the NLP object
+nlp = English()
+
+
+@timing_func
+def read_data(file_name):
+    '''
+    read File
+    '''
+    with open(file_name, 'r') as file:
+        data = file.read().replace('\n', '')
+    return data
+
+
+@timing_func
+def create_token(data):
+    '''
+    creates token
+    '''
+    doc = nlp(data)
+    return doc
+
+
+@timing_func
+def display_token(doc):
+    '''
+    Display's tokens in doc.
+    '''
+    for token in doc:
+        #print(token)
+        #print(type(token))
+        pass
+
+
+def main():
+    '''
+    Main function.
+    '''
+
+    data = read_data('data.txt')
+    doc = create_token(data)
+    display_token(doc)
+
+
+if __name__ == '__main__':
+    main()
