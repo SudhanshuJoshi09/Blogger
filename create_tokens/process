@@ -4,6 +4,7 @@
 from spacy.lang.en import English
 from timer import *
 
+
 # Creating the NLP object
 nlp = English()
 
@@ -30,7 +31,7 @@ def create_token(data):
 @timing_func
 def display_token(doc):
     '''
-    Display's tokens in doc.
+    Display's tokens from doc.
     '''
     for token in doc:
         #print(token)
@@ -42,7 +43,6 @@ def main():
     '''
     Main function.
     '''
-
     data = read_data('data.txt')
     doc = create_token(data)
     display_token(doc)
