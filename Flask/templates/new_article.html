@@ -1,0 +1,29 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Login</title>
+  </head>
+  <body>
+    {% if message %}
+    <p>{{ message }}</p>
+    {% endif %}
+
+    <form action="" method="post">
+      <p>
+        <label for="topic">Topic</label>
+        <input type="text" name="topic" />
+      </p>
+      <p>
+        <label for="tags">tags</label>
+        <input type="text" name="tags" />
+      </p>
+      <p>
+        <label for="details">details</label>
+        <input type="text" name="details" />
+      </p>
+      <p>
+        <input type="submit" />
+      </p>
+    </form>
+  </body>
+</html>

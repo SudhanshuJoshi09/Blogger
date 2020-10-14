@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+  {% if results|length > 1 %}
+    <h1>Did you mean any of these :: </h1>
+    {% for tag in results %}
+    <a href={{ url_for('alternate_search_results', token=tag) }} >{{ tag }}</a>
+    {% endfor %} 
+  {% else %}
+    <h1>There were no tags with the given name. Please enter a proper token. </h1>
+    <a href={{ url_for('search_page') }}>Click Here to try again</a>
+  {% endif %}
+</body>
+</html>
